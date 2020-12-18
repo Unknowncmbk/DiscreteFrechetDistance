@@ -173,14 +173,10 @@ public class DiscreteFrechetDistance {
 	 */
 	private static double euclideanDistance(Point i, Point j) {
 
-		double distance = 0;
-		// for each dimension
-		for (int n = 0; n < DIM; n++) {
-			distance += Math.sqrt(Math.pow(Math.abs((i.dimensions[n] - j.dimensions[n])), 2));
-		}
+		double distance = Math.sqrt(Math.pow(i.dimensions[0] - j.dimensions[0], 2) + Math.pow((i.dimensions[1] - j.dimensions[1]), 2));
 
 		return distance;
-	}
+    	}
 
 	/**
 	 * Parses console input in order to construct a list of points.
